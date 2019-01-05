@@ -1,5 +1,4 @@
-let express = require('express');
-let router = express.Router();
+const router = require('express').Router();
 
 /**
  * send notification
@@ -10,7 +9,6 @@ let router = express.Router();
  * @returns {Error}  default - Unexpected error
  */
 router.post('/send', function(req, res, next) {
-  console.log('hey user');
   res.status(202).send('Post d');
 });
 

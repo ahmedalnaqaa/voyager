@@ -1,15 +1,15 @@
-let createError = require('http-errors');
-let express = require('express');
-let path = require('path');
-let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const swagger = require('./config/swagger');
 
-let indexRouter = require('./routes');
-let usersRouter = require('./routes/user');
-let notificationsRouter = require('./routes/notification');
+const indexRouter = require('./routes');
+const usersRouter = require('./routes/user');
+const notificationsRouter = require('./routes/notification');
 
-let app = express();
+const app = express();
 
 swagger.initializeSwagger(app);
 

@@ -1,6 +1,5 @@
-let express = require('express');
-let router = express.Router();
-let indexController = require('../controllers/index');
+const router = require('express').Router();
+const indexController = require('../controllers/index');
 
 router.get('/', indexController.index);
 

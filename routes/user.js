@@ -1,5 +1,4 @@
-let express = require('express');
-let router = express.Router();
+const router = require('express').Router();
 
 /**
  * GET user notifications
