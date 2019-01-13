@@ -22,7 +22,7 @@ const options = {
         }
     },
     basedir: __dirname, //app absolute path
-    files: ['../routes/**/*.js'] //Path to the API handle folder
+    files: ['../routes/**/*.js', '../models/**/*.js'] //Path to the API handle folder
 };
 
 exports.initializeSwagger = function (app) {

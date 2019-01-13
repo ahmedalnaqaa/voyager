@@ -5,6 +5,6 @@
  * @param res
  * @param next
  */
-exports.index = function (req, res, next) {
+exports.indexAction = function (req, res, next) {
     res.render('index', { title: 'Express' });
 };

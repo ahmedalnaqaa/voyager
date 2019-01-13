@@ -1,6 +1,15 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "56d12785-181f-4b39-8157-0da819171e16",
+      });
+    });
+  </script>
   <h1>{{title}}</h1>
   <p>Welcome to {{title}}</p>
 {% endblock %}

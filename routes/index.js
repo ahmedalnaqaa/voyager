@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const indexController = require('../controllers/index');
 
-router.get('/', indexController.index);
+/**
+ * index page
+ */
+router.get('/', indexController.indexAction);
 
 module.exports = router;

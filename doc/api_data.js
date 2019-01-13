@@ -566,7 +566,7 @@ define({ "api": [
     "url": "private",
     "title": "",
     "version": "0.0.0",
-    "filename": "./node_modules/express/lib/middleware/init.js",
+    "filename": "./node_modules/express/lib/middlewares/init.js",
     "group": "_var_www_html_testAPI_node_modules_express_lib_middleware_init_js",
     "groupTitle": "_var_www_html_testAPI_node_modules_express_lib_middleware_init_js",
     "name": "Private"
@@ -576,7 +576,7 @@ define({ "api": [
     "url": "public",
     "title": "",
     "version": "0.0.0",
-    "filename": "./node_modules/express/lib/middleware/query.js",
+    "filename": "./node_modules/express/lib/middlewares/query.js",
     "group": "_var_www_html_testAPI_node_modules_express_lib_middleware_query_js",
     "groupTitle": "_var_www_html_testAPI_node_modules_express_lib_middleware_query_js",
     "name": "Public"
