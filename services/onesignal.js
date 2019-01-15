@@ -8,10 +8,9 @@ const deviceTypesConstants = require('../constants/deviceTypes');
  * @returns {Promise|*|Promise<T | never>}
  */
 exports.createClient = function (user) {
-    let deviceType = deviceTypesConstants.choices();
     return axios.post('https://onesignal.com/api/v1/players', {
         "app_id": process.env.ONE_SIGNAL_APP_ID,
-        "device_type": deviceType[Math.floor(Math.random()*deviceType.length)],
+        "device_type": user.deviceType,
         "language": user.language,
         "timezone": "+2700", // random value
         "external_user_id": ''+user._id+'',

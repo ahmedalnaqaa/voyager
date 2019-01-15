@@ -1,10 +1,12 @@
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
 process.env.APP_ENV = 'test';
+
 require('dotenv').config({ path: require('path').resolve(__dirname, '../config/vars/'+process.env.APP_ENV+'.env') });
 
 const db = require('../config/db');
 const User = require('../models/user');
+const Notification = require('../models/notification');
 const HttpStatus = require('http-status-codes');
 const faker = require('faker');
 const notificationService = require('../services/notification');
@@ -18,18 +20,18 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 //Our parent block
-describe('Users', () => {
+describe('Notifications', () => {
     beforeEach((done) => { //Before each test we empty the database
-        User.deleteMany({}, (err) => {
+        Notification.deleteMany({}, (err) => {
             done();
         });
     });
 
     /**
-     * Test the /GET /api/user/:id/notifications
+     * Test the /POST /api/notification/send
      */
-    describe('/GET user notifications', () => {
-        it('it should GET all the user notifications', (done) => {
+    describe('/POST notification', () => {
+        it('it should create and send notification', (done) => {
             let firstName = faker.name.firstName();
             let lastName = faker.name.lastName();
             let userData = {
@@ -38,7 +40,7 @@ describe('Users', () => {
                 "fullName": firstName + ' ' + lastName,
                 "phone": faker.phone.phoneNumber('01#########'),
                 "language": faker.locale,
-                "deviceType": Math.floor(Math.random()* [1,2,3].length),
+                "deviceType": 5,
                 "userType": Math.floor(Math.random()* [1,2].length),
             };
             User.create(userData).then(function (user) {
@@ -48,43 +50,22 @@ describe('Users', () => {
                         {'playerId': playerId.data.id},
                         {new: true, useFindAndModify: false}
                     ).then(function (user) {
+                        let notificationData ={
+                            "notificationType": Math.floor(Math.random()* [1,2].length),
+                            "message": 'hello',
+                            "users": [user._id]
+                        };
                         chai.request(server)
-                            .get('/api/user/'+user._id+'/notifications')
+                            .post('/api/notification/send')
+                            .send(notificationData)
                             .end((err, res) => {
-                                res.should.have.status(HttpStatus.OK);
-                                res.body.should.be.a('array');
+                                res.should.have.status(HttpStatus.CREATED);
                                 done();
                             });
                     });
                 });
 
             });
-        });
-    });
-
-    /**
-     * Test the /POST /api/user/register
-     */
-    describe('/POST user', () => {
-        it('it should create new user', (done) => {
-            let firstName = faker.name.firstName();
-            let lastName = faker.name.lastName();
-            let user = {
-                "username": firstName+lastName,
-                "email" : faker.internet.email(),
-                "fullName": firstName + ' ' + lastName,
-                "phone": faker.phone.phoneNumber('01#########'),
-                "language": faker.locale,
-                "deviceType": Math.floor(Math.random()* [1,2,3].length),
-                "userType": Math.floor(Math.random()* [1,2].length),
-            };
-            chai.request(server)
-                .post('/api/user/register')
-                .send(user)
-                .end((err, res) => {
-                    res.should.have.status(HttpStatus.CREATED);
-                    done();
-                });
         });
     });
 });

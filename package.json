@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "generate-random-data": "node ./bin/faker",
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 10000 --exit "
   },
   "dependencies": {
     "axios": "^0.18.0",

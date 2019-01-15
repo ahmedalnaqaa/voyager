@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 
+
+// config environmental variables
+if (typeof process.env.APP_ENV == 'undefined' || !['dev', 'prod', 'test'].includes(process.env.APP_ENV)) {
+  process.env.APP_ENV = 'dev'
+}
+require('dotenv').config({ path: require('path').resolve(__dirname, '../config/vars/'+process.env.APP_ENV+'.env') });
+
 /**
  * Module dependencies.
  */
-require('dotenv').config();
 let app = require('../app');
 let debug = require('debug')('voyager:server');
 let http = require('http');

@@ -1,10 +1,10 @@
-const IOS = 1;
+const IOS = 0;
 const IOS_LABEL = 'ios';
 
 const ANDROID = 2;
 const ANDROID_LABEL = 'android';
 
-const DESKTOP = 3;
+const DESKTOP = 5;
 const DESKTOP_LABEL = 'desktop';
 
 module.exports = {
@@ -21,6 +21,7 @@ module.exports = {
         let choices = {};
         choices[IOS] = IOS_LABEL;
         choices[ANDROID] = ANDROID_LABEL;
+        choices[DESKTOP] = DESKTOP_LABEL;
 
         return choices;
     },
