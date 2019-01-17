@@ -5,5 +5,8 @@ const connectionString = `mongodb://${process.env.MONGO_DB_HOST}:${process.env.M
 mongoose.connect(connectionString, {
     useCreateIndex: true,
     useNewUrlParser: true
-});
+})
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log(err))
+;
 mongoose.Promise = global.Promise;

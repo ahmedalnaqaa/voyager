@@ -6,6 +6,5 @@
  * @param next
  */
 exports.indexAction = function (req, res, next) {
-    res.send(process.env.APP_TITLE);
-    //res.render('index', { title: 'Express' });
+    res.send(req.protocol + '://' + req.get('host') + req.originalUrl);
 };

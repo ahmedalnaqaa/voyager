@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "generate-random-data": "node ./bin/faker",
-    "test": "mocha --timeout 10000 --exit "
+    "test": "docker-compose -f docker/docker-compose.test.yml up --build --abort-on-container-exit",
+    "production": "docker-compose -f docker-compose.yml up -d",
+    "build": "docker-compose -f docker-compose.yml build"
   },
   "dependencies": {
     "axios": "^0.18.0",

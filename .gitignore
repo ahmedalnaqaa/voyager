@@ -85,3 +85,7 @@ typings/
 .buildpath
 .idea
 nbproject
+
+# Docker
+data/
+docker/data/

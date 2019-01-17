@@ -1,0 +1,15 @@
+config/vars/dev.env
+config/vars/prod.env
+config/vars/test.env
+node_modules/
+data/
+LICENSE
+README.md
+.gitignore
+.git/
+example.env
+.travis.yml
+Dockerfile.production
+Dockerfile.test
+Dockerfile
+docker-composer.yml
