@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const swagger = require('./config/swagger');
 const bodyParser = require('body-parser');
+const requestChecker  =   require('./middlewares/request');
 
 const indexRouter = require('./routes');
 const usersRouter = require('./routes/user');
@@ -12,6 +13,9 @@ const notificationsRouter = require('./routes/notification');
 
 const app = express();
 
+app.use(requestChecker);
+
+//console.log(app.request.headers);
 swagger.initializeSwagger(app);
 
 // view engine setup

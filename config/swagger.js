@@ -5,7 +5,7 @@ const options = {
             title: 'Notification API',
             version: '1.0.0',
         },
-        host: process.env.APP_URL+':'+process.env.PORT,
+        host: process.env.APP_HOST,
         basePath: '/api',
         produces: [
             "application/json",

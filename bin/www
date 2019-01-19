@@ -2,10 +2,10 @@
 
 
 // config environmental variables
-if (typeof process.env.APP_ENV == 'undefined' || !['dev', 'prod', 'test'].includes(process.env.APP_ENV)) {
-  process.env.APP_ENV = 'dev'
+if (typeof process.env.NODE_ENV == 'undefined' || !['dev', 'prod', 'test', 'docker'].includes(process.env.NODE_ENV)) {
+  process.env.NODE_ENV = 'dev'
 }
-require('dotenv').config({ path: require('path').resolve(__dirname, '../config/vars/'+process.env.APP_ENV+'.env') });
+require('dotenv').config({ path: require('path').resolve(__dirname, '../config/vars/'+process.env.NODE_ENV+'.env') });
 
 /**
  * Module dependencies.

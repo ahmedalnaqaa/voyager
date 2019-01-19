@@ -1,3 +1,5 @@
+const os = require('os');
+
 /**
  * Index page action.
  *
@@ -6,5 +8,6 @@
  * @param next
  */
 exports.indexAction = function (req, res, next) {
-    res.render('index', { title: 'Express JS' });
+    res.send(req.headers.host);
+    //res.render('index', { title: 'Express JS' });
 };
