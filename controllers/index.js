@@ -6,5 +6,5 @@
  * @param next
  */
 exports.indexAction = function (req, res, next) {
-    res.send(req.protocol + '://' + req.get('host') + req.originalUrl);
+    res.render('index', { title: 'Express JS' });
 };
