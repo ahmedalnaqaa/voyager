@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "preinstall": "node ./bin/createEnv",
     "start": "node ./bin/www",
     "generate-random-data": "node ./bin/faker",
     "test": "docker-compose -f docker/docker-compose.test.yml up --build --abort-on-container-exit",

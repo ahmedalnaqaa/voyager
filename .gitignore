@@ -60,7 +60,6 @@ typings/
 config/vars/dev.env
 config/vars/prod.env
 config/vars/test.env
-config/vars/docker.env
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
