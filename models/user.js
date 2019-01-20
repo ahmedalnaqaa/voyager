@@ -11,7 +11,7 @@ const deviceTypesConstants = require('../constants/deviceTypes');
  * @property {string} fullName - User full name - eg: John Doe
  * @property {int} phone - User phone number - eg: 0123456789
  * @property {int} userType - User type {'rider': 1, 'customer': 2} - eg: 2
- * @property {int} deviceType - User device type {1 : 'ios', 2: 'android', 3: 'desktop'} - eg: 1
+ * @property {int} deviceType - User device type {0 : 'ios', 2: 'android', 5: 'desktop'} - eg: 5
  * @property {string} language - User language - eg: en
  */
 const UserSchema = new Schema({

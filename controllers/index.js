@@ -8,6 +8,5 @@ const os = require('os');
  * @param next
  */
 exports.indexAction = function (req, res, next) {
-    res.send(req.headers.host);
-    //res.render('index', { title: 'Express JS' });
+    res.render('index', { title: 'This is voyager' });
 };

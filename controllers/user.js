@@ -11,13 +11,16 @@ const HttpStatus = require('http-status-codes');
  * @param next
  */
 exports.registerUserAction = function(req, res, next) {
+    console.log('step 1');
     User.create(req.body).then(function (user) {
         oneSignalService.createClient(user).then(function (playerId) {
+            console.log('step 2');
             User.findByIdAndUpdate(
                 {_id: user._id},
                 {'playerId': playerId.data.id},
                 {new: true, useFindAndModify: false}
             ).then(function (user) {
+                console.log('step 3');
                 res.status(HttpStatus.CREATED).json(user);
             });
         });

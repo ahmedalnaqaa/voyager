@@ -1,6 +1,5 @@
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
-process.env.APP_ENV = 'test';
 require('dotenv').config({ path: require('path').resolve(__dirname, '../config/vars/'+process.env.APP_ENV+'.env') });
 
 const db = require('../config/db');

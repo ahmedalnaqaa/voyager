@@ -3,15 +3,18 @@ version: '2'
 services:
   app:
     build: .
+    env_file:
+      - ./config/vars/prod.env
     volumes:
       - ./:/app
       - /app/node_modules
     ports:
-      - "3000:3000"
+      - "8080:8080"
     links:
       - mongo
     depends_on:
       - mongo
+    command: npm run production
 
   mongo:
     image: mongo
