@@ -20,7 +20,7 @@ Before Installation
 Installation
 =======
 ```ssh
-$ git clone git@github.com:ahmedalnaqaa/voyager.git ./voyager
+$ git clone https://github.com/ahmedalnaqaa/voyager.git ./voyager
 $ cd ./voyager
 $ npm install
 ```
@@ -30,6 +30,9 @@ can edit it from this directory `./config/vars/`
 ```ssh
 $ docker-compose up
 ```
+API docs
+=======
+> You can check the API docs from this url: `http://127.0.0.1:8080/api-docs`
 
 Tests
 =======
