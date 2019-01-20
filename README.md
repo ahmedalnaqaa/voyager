@@ -5,13 +5,17 @@ Voyager
 
 > This is a new release of Voyager to discover NodeJs. 
 
-This project is rewrite for the notification microservice
+This microservice for sending push & sms notifications.
 
 Requirements
 =======
-* node v9.9.0, npm v6.5.0, mongo v3.6.3
-* nodemon
-* Git
+* [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
+* [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04)
+
+Before Installation
+=======
+* Make sure that you stopped apache, nginx, mongodb on your local machine
+* Check section `.Env Parameters` to update your .env file for starting.
 
 Installation
 =======
@@ -19,5 +23,47 @@ Installation
 $ git clone git@github.com:ahmedalnaqaa/voyager.git ./voyager
 $ cd ./voyager
 $ npm install
-$ nodemon
+```
+> Note:
+- > When you run npm install, it will automatically create .env files to handle multiple environments. You
+can edit it from this directory `./config/vars/` 
+```ssh
+$ docker-compose up
+```
+
+Tests
+=======
+```ssh
+$ docker-compose run test
+```
+
+.Env Parameters
+=======
+> Prod environment:
+
+```ssh
+NODE_ENV=prod      # App default env
+PORT=8080         # App default port
+APP_TITLE= 'Voyager'
+
+MONGO_DB_HOST=mongo     # MongodDB host
+MONGO_DB_PORT=27017     # MongoDB port
+MONGO_DB_NAME=voyager    # MongoDB name
+
+ONE_SIGNAL_APP_ID=56d12785-181f-4b39-8157-0da819171e16 # OneSignal App ID
+ONE_SIGNAL_APP_REST_API_KEY=ZGUyYjcwMTktNGZiNS00NTNhLWFkNmQtZDNiMjBmNGVlYzlm # OneSignal REST API key
+```
+> Test environment:
+
+```ssh
+NODE_ENV=prod      # App default env
+PORT=3000         # App default port
+APP_TITLE= 'Voyager'
+
+MONGO_DB_HOST=mongo     # MongodDB host
+MONGO_DB_PORT=27017     # MongoDB port
+MONGO_DB_NAME=voyager_test    # MongoDB name
+
+ONE_SIGNAL_APP_ID=56d12785-181f-4b39-8157-0da819171e16 # OneSignal App ID
+ONE_SIGNAL_APP_REST_API_KEY=ZGUyYjcwMTktNGZiNS00NTNhLWFkNmQtZDNiMjBmNGVlYzlm # OneSignal REST API key
 ```
