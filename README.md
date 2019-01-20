@@ -25,7 +25,7 @@ $ cd ./voyager
 $ npm install
 ```
 > Note:
-- > When you run npm install, it will automatically create .env files to handle multiple environments. You
+When you run npm install, it will automatically create .env files to handle multiple environments. You
 can edit it from this directory `./config/vars/` 
 ```ssh
 $ docker-compose up
