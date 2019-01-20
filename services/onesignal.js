@@ -1,6 +1,5 @@
 const axios = require('axios');
 const crypto = require('crypto');
-const deviceTypesConstants = require('../constants/deviceTypes');
 
 /**
  * Create client on one signal

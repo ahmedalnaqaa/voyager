@@ -6,7 +6,6 @@ const db = require('../config/db');
 const User = require('../models/user');
 const HttpStatus = require('http-status-codes');
 const faker = require('faker');
-const notificationService = require('../services/notification');
 const oneSignalService = require('../services/onesignal');
 
 //Require the dev-dependencies

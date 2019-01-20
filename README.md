@@ -5,7 +5,7 @@ Voyager
 
 > This is a new release of Voyager to discover NodeJs. 
 
-This microservice for sending push & sms notifications.
+This microservice for sending push & sms notifications using OneSignal third party.
 
 Requirements
 =======
