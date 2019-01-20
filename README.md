@@ -26,7 +26,7 @@ $ npm install
 ```
 > Note:
 When you run npm install, it will automatically create .env files to handle multiple environments. You
-can edit it from this directory `./config/vars/` 
+can edit it from this directory `./config/vars/` using the attached parameters in `.Env Parameters` section.
 ```ssh
 $ docker-compose up
 ```
