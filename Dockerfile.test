@@ -1,0 +1,7 @@
+FROM node:latest
+
+RUN mkdir /app-test
+WORKDIR /app-test
+COPY package.json /app-test/
+RUN npm install
+CMD [ "npm", "run", "test" ]

@@ -6,7 +6,7 @@
     "preinstall": "node ./bin/createEnv",
     "start": "node ./bin/www",
     "generate-random-data": "node ./bin/faker",
-    "test": "mocha --timeout 10000 --exit",
+    "test": "NODE_ENV=test mocha --timeout 10000 --exit",
     "production": "NODE_ENV=prod node ./bin/www"
   },
   "dependencies": {
