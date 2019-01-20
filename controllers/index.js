@@ -8,5 +8,5 @@ const os = require('os');
  * @param next
  */
 exports.indexAction = function (req, res, next) {
-    res.render('index', { title: 'This is voyager' });
+    res.render('index', { title: 'Voyager' });
 };

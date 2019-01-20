@@ -42,28 +42,28 @@ $ docker-compose run test
 > Prod environment:
 
 ```ssh
-NODE_ENV=prod      # App default env
-PORT=8080         # App default port
-APP_TITLE= 'Voyager'
+NODE_ENV=prod
+PORT=8080
+APP_TITLE=Voyager
 
-MONGO_DB_HOST=mongo     # MongodDB host
-MONGO_DB_PORT=27017     # MongoDB port
-MONGO_DB_NAME=voyager    # MongoDB name
+MONGO_DB_HOST=mongo
+MONGO_DB_PORT=27017
+MONGO_DB_NAME=voyager
 
-ONE_SIGNAL_APP_ID=56d12785-181f-4b39-8157-0da819171e16 # OneSignal App ID
-ONE_SIGNAL_APP_REST_API_KEY=ZGUyYjcwMTktNGZiNS00NTNhLWFkNmQtZDNiMjBmNGVlYzlm # OneSignal REST API key
+ONE_SIGNAL_APP_ID=56d12785-181f-4b39-8157-0da819171e16
+ONE_SIGNAL_APP_REST_API_KEY=ZGUyYjcwMTktNGZiNS00NTNhLWFkNmQtZDNiMjBmNGVlYzlm
 ```
 > Test environment:
 
 ```ssh
-NODE_ENV=prod      # App default env
-PORT=3000         # App default port
-APP_TITLE= 'Voyager'
+NODE_ENV=test
+PORT=3000
+APP_TITLE=Voyager
 
-MONGO_DB_HOST=mongo     # MongodDB host
-MONGO_DB_PORT=27017     # MongoDB port
-MONGO_DB_NAME=voyager_test    # MongoDB name
+MONGO_DB_HOST=mongo
+MONGO_DB_PORT=27017
+MONGO_DB_NAME=voyager_test
 
-ONE_SIGNAL_APP_ID=56d12785-181f-4b39-8157-0da819171e16 # OneSignal App ID
-ONE_SIGNAL_APP_REST_API_KEY=ZGUyYjcwMTktNGZiNS00NTNhLWFkNmQtZDNiMjBmNGVlYzlm # OneSignal REST API key
+ONE_SIGNAL_APP_ID=56d12785-181f-4b39-8157-0da819171e16
+ONE_SIGNAL_APP_REST_API_KEY=ZGUyYjcwMTktNGZiNS00NTNhLWFkNmQtZDNiMjBmNGVlYzlm
 ```
